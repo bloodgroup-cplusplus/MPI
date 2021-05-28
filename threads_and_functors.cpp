@@ -18,6 +18,7 @@
 // we create a wrapper class it will automatically join the thread
 // thread object can be joined by any callable object like a functor or a lambda function
 // A parameter to a thread is always passed by value,even if we try to pass reference to it
+//However in order to pass by refrence itself we need to explicitly mention it with a std::ref before passing it as a parameter
 // we can also modify the operator function inside the functor to accept parameters
 // the syntax than changes to 
 // return_type operator()(datatype variable name)
