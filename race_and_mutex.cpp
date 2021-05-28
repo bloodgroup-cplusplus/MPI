@@ -33,18 +33,18 @@
 class LogFile
 {
 	std::mutex m_mutex;
-	std::ofstream f;
+	std::ofstream _f;
 	
 	public:
 		LogFile()
 		{
-			f.open("log.txt");//do create a logfile at the location of program
+			_f.open("log.txt");//do create a logfile at the location of program
 		}
 	
 		void shared_print(std::string id,int value)
 		{
 			std::lock_guard<std::mutex> locker(m_mutex);
-			f<<"From"<<id<<":"<<value<<std::endl;
+			_f<<"From"<<id<<":"<<value<<std::endl;
 		}
 	
 };
