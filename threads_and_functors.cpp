@@ -17,7 +17,29 @@
 //  here we use an altreanative method of using thread by using RAII
 // we create a wrapper class it will automatically join the thread
 // thread object can be joined by any callable object like a functor or a lambda function
+// A parameter to a thread is always passed by value,even if we try to pass reference to it
+// we can also modify the operator function inside the functor to accept parameters
+// the syntax than changes to 
+// return_type operator()(datatype variable name)
+//{
+  //  .......
+    //}
+//threads cannot be copied
+//i.e., std::thread t2=t1 is an invalid operation
+// so to transfer  ownership we can use the move function
+// std::thread t2=std::move(t1);
+// get the identification number of each thread we can use the command
+// std::cout<<std::this_thread::get_id()<<std::endl;(this is for parent id thread)
+//std::cout<<t1.get_id()<<std::endl;(for child thread)
+//inside the main we can call this by using std::thread t1((Fctor()),the parameter to pass);
 // here we accomplish that by creating a functor
+//oversubscription=bad (more thread running than required).too much context switching which degrads 
+//the performance
+// so the thread module provides a hardware concurrency
+// std::thread::hardware_concurrency();
+//this will give an indiciation of how many thread can be truly running 
+
+
 #include<iostream>
 #include<thread>
 
