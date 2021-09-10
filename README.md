@@ -2,7 +2,7 @@
 Refer the website for installation:
   https://ireneli.eu/2016/02/15/installation/
   
-  sudo apt-get install mpic++ // even this installed for ubuntu
+  sudo apt-get install mpic++ // even this installed for ubuntu.
   
   
  Parallel machine is computer system having more than one processor like cluster of computers etc.
